@@ -22,15 +22,14 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
+Route::get('/', [HomeController::class, 'frontend']);
+Route::get('/profil', [HomeController::class, 'profil']);
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::prefix('/')
+Route::prefix('/signin')
     ->middleware('auth')
     ->group(function () {
         Route::resource('roles', RoleController::class);
