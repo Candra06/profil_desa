@@ -35,4 +35,9 @@ class HomeController extends Controller
     {
         return view('app.frontend.profile');
     }
+
+    public function layanan()
+    {
+        return view('app.frontend.layanan');
+    }
 }

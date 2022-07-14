@@ -13,8 +13,8 @@
             <div class="navbar-nav ms-auto">
                 <a class="nav-link  {{ Request::segment(1) != 'profil' && Request::segment(1) != 'dusun' && Request::segment(1) != 'layanan'  ? 'active' : '' }}" aria-current="page" href="{{url('/')}}">Beranda</a>
                 <a class="nav-link {{ Request::segment(1) == 'profil' ? 'active' : '' }}" href="{{url('/profil')}}">Profile</a>
-                <a class="nav-link" href="#">Dusun</a>
-                <a class="nav-link" href="#">Layanan Administrasi</a>
+                <a class="nav-link " href="#">Dusun</a>
+                <a class="nav-link {{ Request::segment(1) == 'layanan' ? 'active' : '' }}" href="{{url('/layanan')}}">Layanan Administrasi</a>
                 <!-- <a class="nav-link" href="profile.html">Profile</a> -->
                 <!-- <a class="nav-link" href="program_keahlian.html">Dusun</a> -->
                 <!-- <a class="nav-link" href="bkk.html">Layanan Administrasi</a> -->

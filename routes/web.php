@@ -26,6 +26,7 @@ use Illuminate\Support\Facades\Auth;
 Auth::routes();
 Route::get('/', [HomeController::class, 'frontend']);
 Route::get('/profil', [HomeController::class, 'profil']);
+Route::get('/layanan', [HomeController::class, 'layanan']);
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
