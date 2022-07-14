@@ -9,8 +9,8 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
         </script>
     <link rel="stylesheet" href="{{asset('asset/css/all.min.css')}}" />
-    <link rel="stylesheet" href="asset/css/base.css" />
-    <link rel="stylesheet" href="asset/css/style.css" />
-    <link rel="shortcut icon" href="asset/images/favicon.png">
+    <link rel="stylesheet" href="{{asset('asset/css/base.css')}}" />
+    <link rel="stylesheet" href="{{asset('asset/css/style.css')}}" />
+    <link rel="shortcut icon" href="{{asset('asset/images/favicon.png')}}">
 
 </head>

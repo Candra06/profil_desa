@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md fixed-top p-2 navbar-dark" id="navbar">
     <div class="container">
         <a class="navbar-brand" href="index.html">
-            <img src="asset/images/logo-light.png" class="img-fluid" id="brand" />
+            <img src="{{asset('asset/images/logo-light.png')}}" class="img-fluid" id="brand" />
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
