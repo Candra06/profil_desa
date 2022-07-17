@@ -62,7 +62,7 @@ class GaleriDusunController extends Controller
         if ($request->hasFile('foto')) {
             $validated['foto'] = $request->file('foto')->store('public');
         }
-        
+
         $galeriDusun = GaleriDusun::create($validated);
 
         return redirect()

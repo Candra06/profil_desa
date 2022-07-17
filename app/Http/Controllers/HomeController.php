@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Dusun;
+use App\Models\GaleriDusun;
+use App\Models\Pelayanan;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -38,6 +41,24 @@ class HomeController extends Controller
 
     public function layanan()
     {
-        return view('app.frontend.layanan');
+        $data = Pelayanan::all();
+        return view('app.frontend.layanan', compact('data'));
+    }
+
+    public function dusun()
+    {
+        $data = [];
+        $dusun = Dusun::all();
+        foreach ($dusun as $ds) {
+            $tmpGaleri = GaleriDusun::where('dusun_id', $ds->id)->get();
+            $tmp['nama_dusun'] = $ds->nama_dusun;
+            $tmp['kepala_dusun'] = $ds->kepala_dusun;
+            $tmp['deskripsi'] = $ds->deskripsi;
+            $tmp['galeri'] = $tmpGaleri;
+
+            array_push($data, $tmp);
+        }
+            // return $data;
+        return view('app.frontend.dusun', compact('data'));
     }
 }

@@ -16,7 +16,7 @@
                     </div>
                 </div>
             </div>
-
+        </div>
             <!-- <div class="container p-5">
                 <h1>Selamat Datang di <br> <span class="base-color">Desa Kertonegoro</span></h1>
             </div> -->

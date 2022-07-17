@@ -11,17 +11,19 @@
         <div class="sambutan">
             <div class="container">
                 <div class="row">
+                    @foreach ($data as $item)
                     <div class="col-lg-12 mb-3">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">SURAT KETERANGAN USAHA</h5>
+                                <h5 class="card-title">{{$item->judul_pelayanan}}</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">Desa Kertonegoro</h6>
-                                <p class="card-text">docs.google.com/forms/d/e/1FAIpQLSdqXK4lzm8KmcSA69_74rJpJjbYJ__tMzjVJSuTdG3FETN25Q/viewform?usp=pp_url</p>
+                                <a href="{{$item->link_pelayanan}}" target="_blank" class="btn btn-success"><p class="card-text">Menuju Form</p></a>
 
                             </div>
                         </div>
                     </div>
-                    
+                    @endforeach
+
                 </div>
             </div>
         </div>
