@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Artikels;
 use App\Models\Dusun;
 use App\Models\GaleriDusun;
 use App\Models\Pelayanan;
@@ -31,7 +32,10 @@ class HomeController extends Controller
 
     public function frontend()
     {
-        return view('app.frontend.index');
+        $artikel = Artikels::select('*')->orderBy('id', 'DESC')->first();
+        $artikels = Artikels::select('*')->orderBy('id', 'DESC')->limit(3)->get();
+        
+        return view('app.frontend.index', compact('artikel', 'artikels'));
     }
 
     public function profil()

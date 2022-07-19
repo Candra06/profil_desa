@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm p-2">
     <div class="container">
-        
+
         <a class="navbar-brand text-primary font-weight-bold text-uppercase" href="{{ url('/') }}">
             ProfilDesa
         </a>
@@ -20,7 +20,7 @@
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             Apps <span class="caret"></span>
                         </a>
-                        
+
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             @can('view-any', App\Models\Dusun::class)
                             <a class="dropdown-item" href="{{ route('dusuns.index') }}">Dusuns</a>
@@ -37,21 +37,24 @@
                             @can('view-any', App\Models\VillagePottentions::class)
                             <a class="dropdown-item" href="{{ route('all-village-pottentions.index') }}">All Village Pottentions</a>
                             @endcan
+                            @can('view-any', App\Models\Artikels::class)
+                            <a class="dropdown-item" href="{{ route('artikels.index') }}">Artikels</a>
+                            @endcan
                         </div>
 
                     </li>
-                    @if (Auth::user()->can('view-any', Spatie\Permission\Models\Role::class) || 
+                    @if (Auth::user()->can('view-any', Spatie\Permission\Models\Role::class) ||
                         Auth::user()->can('view-any', Spatie\Permission\Models\Permission::class))
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             Access Management <span class="caret"></span>
                         </a>
-                        
+
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             @can('view-any', Spatie\Permission\Models\Role::class)
                             <a class="dropdown-item" href="{{ route('roles.index') }}">Roles</a>
                             @endcan
-                    
+
                             @can('view-any', Spatie\Permission\Models\Permission::class)
                             <a class="dropdown-item" href="{{ route('permissions.index') }}">Permissions</a>
                             @endcan

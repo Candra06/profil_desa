@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class DusunStoreRequest extends FormRequest
+class ArtikelsUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +24,8 @@ class DusunStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'nama_dusun' => ['required', 'max:255', 'string'],
-            'kepala_dusun' => ['required', 'max:255', 'string'],
-            'deskripsi' => ['required', 'string'],
+            'judul' => ['required'],
+            'konten' => ['required', 'max:255', 'string'],
         ];
     }
 }

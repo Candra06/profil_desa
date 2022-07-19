@@ -53,11 +53,8 @@ class GaleriDusunController extends Controller
     public function store(GaleriDusunStoreRequest $request)
     {
         $this->authorize('create', GaleriDusun::class);
-        // return $request;
+        
         $validated = $request->validated();
-        // $fileType = $request->file('foto')->extension();
-        //     $name = Str::random(8) . '.' . $fileType;
-        //     $input['foto'] = Storage::putFileAs('foto', $request->file('foto'), $name);
 
         if ($request->hasFile('foto')) {
             $validated['foto'] = $request->file('foto')->store('public');

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArtikelsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
@@ -41,6 +42,7 @@ Route::prefix('/signin')
         Route::resource('galeri-dusuns', GaleriDusunController::class);
         Route::resource('pelayanans', PelayananController::class);
         Route::resource('users', UserController::class);
+        Route::resource('artikels', ArtikelsController::class);
         Route::get('all-village-pottentions', [
             VillagePottentionsController::class,
             'index',

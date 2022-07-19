@@ -104,6 +104,7 @@ class DusunController extends Controller
      */
     public function destroy(Request $request, Dusun $dusun)
     {
+        return $dusun;
         $this->authorize('delete', $dusun);
 
         $dusun->delete();
