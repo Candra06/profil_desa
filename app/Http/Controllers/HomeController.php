@@ -30,11 +30,17 @@ class HomeController extends Controller
         return view('home');
     }
 
+    public function unpayment()
+    {
+        return "<h1>Web Unpaid</h1>";
+        return view('home');
+    }
+
     public function frontend()
     {
         $artikel = Artikels::select('*')->orderBy('id', 'DESC')->first();
         $artikels = Artikels::select('*')->orderBy('id', 'DESC')->limit(3)->get();
-        
+
         return view('app.frontend.index', compact('artikel', 'artikels'));
     }
 
